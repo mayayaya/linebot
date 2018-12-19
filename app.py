@@ -82,7 +82,7 @@ def handle_message(event):
    elif '!h' in _token[0] or '!help' in _token[0]:
         _message = TextSendMessage(text="請輸入:課程, 誠品, 空氣 + <關鍵字>")
         line_bot_api.reply_message(event.reply_token, _message)
-    else:
+   else:
         search_result = get_search_engine(_token[0], 3)
         reply = "您所搜尋的結果為：\n"
         line_bot_api.reply_message(event.reply_token,reply)
@@ -154,7 +154,7 @@ def get_search_engine(search_thing, result_num=4):
 import os
 if __name__ == "__main__":
     # load PM2.5 records
-    # loadPMJson()
+    loadPMJson()
     
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
