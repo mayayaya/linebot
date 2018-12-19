@@ -79,6 +79,9 @@ def handle_message(event):
                 _message = TextSendMessage(text=pm_site[_site]) #reply pm2.5 for the site
                 line_bot_api.reply_message(event.reply_token, _message)
                 break
+   elif '!h' in _token[0] or '!help' in _token[0]:
+        _message = TextSendMessage(text="請輸入:課程, 誠品, 空氣 + <關鍵字>")
+        line_bot_api.reply_message(event.reply_token, _message)
     else:
         search_result = get_search_engine(_token[0], 3)
         reply = "您所搜尋的結果為：\n"
